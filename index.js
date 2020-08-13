@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const fetch = require("node-fetch");
 
 
 const questions = [
@@ -56,9 +57,11 @@ const writeFile = (data) => {
     fs.writeFileSync("readmetest.md", createMD(data))
 }
 
+
+// move this to other file to make md formatting more reasonable
 const createMD = (response) => {
-    return `
-${response.userName}`
+    return (
+        `# ${response.userName}`)
 }
 
 const init = () => {
@@ -67,4 +70,12 @@ const init = () => {
     })
 }
 
-init()
+// init()
+
+// git fetch test
+const gitFetch = (userName) => {
+    fetch(`https://api.github.com/users/${userName}`)
+    .then(r => r.json()
+    .then(res => console.log(res)))
+}
+gitFetch("jonahkarew")
