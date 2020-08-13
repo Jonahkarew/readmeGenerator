@@ -39,6 +39,11 @@ const questions = [
     },
     {
         type: "input",
+        name: 'techUsed',
+        message: 'what technologies were used to build this project?'
+    },
+    {
+        type: "input",
         name: 'test',
         message: 'what command do i use to run tests?',
         default: 'npm test'

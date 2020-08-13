@@ -35,6 +35,10 @@ To install necessary dependencies, run the following command:
 ${data.installation}
 \`\`\`
 
+## Technologies Utilized
+
+${data.techUsed}
+
 ## Usage
 
 ${data.usage}
