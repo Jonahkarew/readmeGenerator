@@ -1,17 +1,22 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const fetch = require("node-fetch");
-
+const createMd = require("./assets/createMd");
+const api = require("./assets/api")
 
 const questions = [
     {
         type: "input",
-        name: 'userName',
+        name: 'username',
         message: 'what is your github username?'
     },
     {
         type: "input",
-        name: 'projectName',
+        name: 'email',
+        message: 'what is your email address?'
+    },
+    {
+        type: "input",
+        name: 'project',
         message: 'what is your project name?'
     },
     {
@@ -53,29 +58,27 @@ const questions = [
 ]
 
 
-const writeFile = (data) => {
-    fs.writeFileSync("readmetest.md", createMD(data))
+const writeFile = (data, apiData) => {
+    fs.writeFileSync("./output/README.md", createMd(data, apiData))
 }
 
 
 // move this to other file to make md formatting more reasonable
-const createMD = (response) => {
-    return (
-        `# ${response.userName}`)
-}
+// const createMD = (response) => {
+//     return (
+//         `# ${response.username}`)
+// }
 
 const init = () => {
     inquirer.prompt(questions).then(response => {
-        writeFile(response)
+        // writeFile(response)
+        api.getGithubData(response)
+            .then(r => writeFile(response, r))
     })
 }
 
 // init()
 
 // git fetch test
-const gitFetch = (userName) => {
-    fetch(`https://api.github.com/users/${userName}`)
-    .then(r => r.json()
-    .then(res => console.log(res)))
-}
-gitFetch("jonahkarew")
+
+init()

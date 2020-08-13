@@ -2,15 +2,14 @@ const fetch = require("node-fetch");
 
 const api = {
     getGithubData(data) {
-        fetch(`https://api.github.com/repos/${data.username}/${data.project}`)
+        let url = `https://api.github.com/repos/${data.username}/${data.project}`
+        return fetch(url)
         .then(r => r.json()
-        .then(res => console.log(res)))
+        .then(res => {return res}))
+        .catch(err => console.log("there was an error finding that project, please check your spellings and try again."))
     }
 }
 
-var data = {
-    username: 'jonahkarew',
-    project: 'readmeGenerator'
-}
 
-api.getGithubUser(data)
+
+module.exports = api
