@@ -56,6 +56,6 @@ npm test
 
 <img src="https://avatars2.githubusercontent.com/u/44814987?v=4" alt="avatar" style="border-radius: 16px" width="30" />
 
-If you have any questions about the repo, open an issue or contact [jonahkarew](https://api.github.com/repos/Jonahkarew/readmeGenerator) directly at jonahkarew@gmail.com.
+If you have any questions about the repo, open an issue or contact [jonahkarew](https://github.com/Jonahkarew) directly at jonahkarew@gmail.com.
 
     
