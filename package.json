@@ -1,0 +1,28 @@
+{
+  "name": "readmegenerator",
+  "version": "1.0.0",
+  "description": "node application to generate readmes",
+  "main": "index.js",
+  "scripts": {
+    "test": "",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jonahkarew/readmeGenerator.git"
+  },
+  "keywords": [
+    "node",
+    "readme",
+    "inquisitor"
+  ],
+  "author": "Jonah Karew",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jonahkarew/readmeGenerator/issues"
+  },
+  "homepage": "https://github.com/Jonahkarew/readmeGenerator#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  }
+}
